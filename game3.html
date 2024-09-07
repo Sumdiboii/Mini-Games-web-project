@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/computer-game.png" type="image/png">
+    <link rel="stylesheet" href="game3.css">
+    <script src="game.js"></script>
+    <title>GaMeFrEaK</title>
+</head>
+
+<header>
+    <div class="container">
+        <header class="title-bar">
+            <img src="assets/computer-game.png" alt="Logo" class="logo">
+            
+                <h1 onclick="location.href='game.html'" style="cursor: pointer;">GaMeFrEaK</h1>
+            
+            <div class="right-sections">
+                
+                <input type="text" class="search-box" placeholder="Search">
+                
+                
+                <img src="assets/menu_icon.png" alt="Menu" class="menu-icon" onclick="toggleMenu()" style="cursor: pointer;">
+
+
+
+                <div id="dropdownMenu" class="dropdown-content">
+                    <a href="#home">
+                        <img src="assets/manager.png" alt="Profile Icon"> My Profile
+                    </a>
+                    <a href="game2.html">
+                        <img src="assets/gallery.png" alt="Gallery Icon"> Gallery
+                    </a>
+                    <a href="game2.html#popgames">
+                        <img src="assets/games.png" alt="Popular Games Icon"> Popular Games
+                    </a>
+                    <a href="game3.html">
+                        <img src="assets/warehouse.png" alt="All Games Icon"> All Games
+                    </a>
+                    <a href="#settings">
+                        <img src="assets/setting.png" alt="Settings Icon"> Settings
+                    </a>
+                    <a href="game2.html#box">
+                        <img src="assets/customer-service.png" alt="Contact Icon"> Help and Contact
+                    </a>
+                </div>
+                
+
+                
+            </div>
+        </header>
+    
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+           
+        }
+        
+        body::before {
+            position: fixed;
+            width: 100vw; /* Ensure the image covers the full viewport width */
+            height: 375vh; /* Ensure the image covers the full viewport height */
+            top: 0;
+            left: 0;
+            content: '';
+            background-image: url(assets/coolbg.jpg);
+            background-size: cover; /* Ensures the background image covers the entire element */
+            background-repeat: no-repeat;
+            background-position: center center; /* Centers the image on the screen */
+            background-attachment: fixed; /* Keeps the image fixed while scrolling */
+            z-index: 0; /* Keeps the image behind other content */
+            pointer-events: none;
+            
+           
+}
+
+    </style>
+    
+</head>
+<body>
+
+    <div class="title-container" id="popgames">
+        <h1>All Mini Games</h1>
+    </div>
+
+    <div class="games">
+        <div class="game-item">
+            <img src="assets/CATPIC.jpg" alt="Cat" class="game-image">
+            <div class="details">
+                <h3>Cat Game</h3>
+                <p>Enjoy the adventures with cute cats!</p>
+            </div>
+        </div>
+        <div class="game-item">
+            <img src="assets/car2.jpg" alt="Car 2" class="game-image">
+            <div class="details">
+                <h3>Racing Game</h3>
+                <p>Race against the best drivers!</p>
+            </div>
+        </div>
+        <div class="game-item">
+            <img src="assets/car3.jpg" alt="Car 3" class="game-image">
+            <div class="details">
+                <h3>Adventure Racing</h3>
+                <p>Go on thrilling adventures!</p>
+            </div>
+        </div>
+        <div class="game-item">
+            <img src="assets/car4.jpg" alt="Car 4" class="game-image">
+            <div class="details">
+                <h3>Car Challenge</h3>
+                <p>Take on tough challenges with your car!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="games">
+        <div class="game-item">
+            <img src="assets/CATPIC.jpg" alt="Cat" class="game-image">
+            <div class="details">
+                <h3>Cat Game</h3>
+                <p>Enjoy the adventures with cute cats!</p>
+            </div>
+        </div>
+        <div class="game-item">
+            <img src="assets/car2.jpg" alt="Car 2" class="game-image">
+            <div class="details">
+                <h3>Racing Game</h3>
+                <p>Race against the best drivers!</p>
+            </div>
+        </div>
+        <div class="game-item">
+            <img src="assets/car3.jpg" alt="Car 3" class="game-image">
+            <div class="details">
+                <h3>Adventure Racing</h3>
+                <p>Go on thrilling adventures!</p>
+            </div>
+        </div>
+        <div class="game-item">
+            <img src="assets/car4.jpg" alt="Car 4" class="game-image">
+            <div class="details">
+                <h3>Car Challenge</h3>
+                <p>Take on tough challenges with your car!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="games">
+        <div class="game-item">
+            <img src="assets/CATPIC.jpg" alt="Cat" class="game-image">
+            <div class="details">
+                <h3>Cat Game</h3>
+                <p>Enjoy the adventures with cute cats!</p>
+            </div>
+        </div>
+        <div class="game-item">
+            <img src="assets/car2.jpg" alt="Car 2" class="game-image">
+            <div class="details">
+                <h3>Racing Game</h3>
+                <p>Race against the best drivers!</p>
+            </div>
+        </div>
+        <div class="game-item">
+            <img src="assets/car3.jpg" alt="Car 3" class="game-image">
+            <div class="details">
+                <h3>Adventure Racing</h3>
+                <p>Go on thrilling adventures!</p>
+            </div>
+        </div>
+        <div class="game-item">
+            <img src="assets/car4.jpg" alt="Car 4" class="game-image">
+            <div class="details">
+                <h3>Car Challenge</h3>
+                <p>Take on tough challenges with your car!</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <h3>Footer</h3>
+    </div>
+<script src="game3.js"></script>     
+</body>
+</html>

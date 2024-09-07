@@ -1,0 +1,254 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+html {
+    scroll-behavior: smooth;
+}
+
+.search-box {
+    border: 2px solid #000000; /* Darker border for better visibility */
+    border-radius: 10px; /* Rounder corners */
+    padding: 10px 15px; /* Increased padding for a larger clickable area */
+    width: 400px; /* Adjusted width */
+    margin-left: 10px; /* Space between menu icon and search box */
+    font-size: 16px; /* Larger text for better readability */
+    transition: all 0.3s ease; /* Smooth transition effect for focus */
+}
+
+.search-box:focus {
+    border-color: #007BFF; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a glow effect */
+}
+
+
+.title-bar {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    z-index: 15;
+    position: relative; /* Ensure that child elements are properly positioned */
+    height: 90px; /* Optionally set a fixed height to ensure thinness */
+    background-color: rgba(37, 40, 59, 0.2); /* Translucent background */
+    backdrop-filter: blur(10px); /* Optional: adds a blur effect behind the content */
+    
+}
+
+.logo {
+    margin-left: 30px;
+    height: 50px;
+    margin-right: 20px;
+    padding: 10;
+    z-index: 15;
+    
+}
+
+.title-bar .right-sections {
+    margin-left: auto; /* Pushes the right-sections to the right */
+    display: flex;
+    align-items: center;
+   
+}
+
+
+.menu-icon {
+    margin-right: 30px;
+    width: 65px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 80px; /* Space between the title and the menu icon */
+    cursor: pointer; /* Make it look clickable */
+    padding: 4px;
+   
+}
+
+
+/* Keyframes for fadeInUp Effect */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(90px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for shadowPulse Effect */
+@keyframes shadowPulse {
+    0%, 100% {
+        text-shadow: 0 0 05px #ffffff;
+    }
+    50% {
+        text-shadow: 0 0 10px #ffffff;
+    }
+}
+
+
+
+
+.dropdown-content {
+    margin-top: 470px;
+    display: none; /* Hide the dropdown by default */
+    position: absolute;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    width: 370px; /* Adjust width to fit images */
+    height: 405px;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+    z-index: 5;
+    border-radius: 10px;
+    right: 0; /* Align the dropdown to the right */
+    opacity: 90%;
+    border: 2px solid black; /* Add border */
+}
+
+.dropdown-content a {
+    color: rgb(0, 0, 0);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex; /* Use flexbox to align text and image */
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid black; /* Add border to each option */
+    height: 65px;
+}
+
+.dropdown-content a img {
+    margin-right: 35px; /* Space between the image and the text */
+    width: 35px; /* Adjust image size */
+    height: 35px; /* Adjust image size */
+    
+}
+
+.dropdown-content a:hover {
+    color: rgb(0, 0, 0);
+    background-color: #9a9a9a; /* Highlight option on hover */
+    border-bottom-color: grey; /* Change border color on hover */
+}
+
+.title-container{
+    
+    position: relative; /* Allows precise positioning */
+    top: 15vh; /* Adjust this value to move the container upwards */
+    right: 0; /* Aligns the container to the right */
+    padding: 20px; /* Padding for the container */
+    background-color: transparent;
+
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.0); /* Subtle shadow effect */
+    width: 700px; /* Set desired width */
+    height: 15vh; /* Set desired height */
+    left: 485px;
+    z-index: 10; /* Adjust z-index if necessary */
+    margin-top: -70px;
+    margin-left: 30px;
+    margin-bottom: 150px;
+    background-color: transparent;
+
+}
+
+.title-container h1 {
+font-size: 57px; /* Large font size */
+font-weight: 800;
+color: #ffffff; /* Vibrant color */
+text-align: center; /* Centered text */
+margin-bottom: 10px; /* Spacing below the heading */
+animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */
+z-index: 25;
+}
+
+.games {
+    display: flex;
+    justify-content: space-between; /* Space between the items */
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    margin-top: 100px;
+    
+    padding: 30px; /* Add padding to ensure distance from the edges */
+    animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */
+}
+
+.game-item {
+    position: relative; /* Position relative for absolute positioning of details */
+    width: calc(20% - 20px); /* Set a fixed width for the game items */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+    margin-left: 10px; /* Spacing between game items */
+    margin-right: 10px;
+    overflow: hidden; /* Hide overflow to contain hover effect */
+    border-radius: 10px; /* Optional: add some border radius */
+    transition: transform 0.3s; /* Smooth scale effect */
+    border: 1px solid black; /* Add border */
+}
+
+.game-image {
+    width: 100%; /* Full width of the container */
+    height: 50vh; /* Adjust the height */
+    border-radius: 8px; /* Optional: add some border radius */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    transition: filter 0.3s ease; /* Smooth transition for blur effect */
+}
+
+.details {
+    position: absolute;
+    top: 0; /* Position at the top of the image */
+    left: 0; /* Align to the left edge of the image */
+    right: 0; /* Align to the right edge of the image */
+    bottom: 0; /* Align to the bottom of the image */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #ffffff; /* White text color */
+    opacity: 0; /* Initially hidden */
+    display: flex; /* Enable flexbox for alignment */
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    transition: opacity 0.3s ease; /* Fade effect */
+}
+
+.details h3 {
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 0; /* Adjust margin for better positioning */
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.details p {
+    font-size: 12px; /* Adjust font size for the description */
+}
+
+.game-item:hover .game-image {
+    filter: blur(2px); /* Blur the image on hover */
+}
+
+.game-item:hover .details {
+    opacity: 1; /* Show details on hover */
+}
+
+.game-item:hover {
+    transform: scale(1.05); /* Scale up the item slightly on hover */
+}
+
+.footer {
+    position: relative;  /* Fixes footer in place, no scroll */
+    bottom: 0;        /* Sticks the footer to the bottom of the viewport */
+    left: 0;          /* Aligns the footer to the left side */
+    width: 100%;      /* Ensures the footer spans the full width of the viewport */
+    height: 150px;     /* Footer height */
+    
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;     /* Text color */
+    display: flex;    /* Flexbox for alignment */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;     /* Centers content vertically */
+    z-index: 100;     /* Ensures the footer stays on top of other elements */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
+    padding: 0;
+    margin: 0;
+}
+
+

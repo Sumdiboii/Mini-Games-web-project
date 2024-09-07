@@ -1,0 +1,763 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+html {
+    scroll-behavior: smooth;
+}
+
+.search-box {
+    border: 2px solid #000000; /* Darker border for better visibility */
+    border-radius: 10px; /* Rounder corners */
+    padding: 10px 15px; /* Increased padding for a larger clickable area */
+    width: 400px; /* Adjusted width */
+    margin-left: 10px; /* Space between menu icon and search box */
+    font-size: 16px; /* Larger text for better readability */
+}
+
+.search-box:focus {
+    border-color: #007BFF; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a glow effect */
+}
+
+
+.title-bar {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    z-index: 15;
+    position: relative; /* Ensure that child elements are properly positioned */
+    height: 90px; /* Optionally set a fixed height to ensure thinness */
+    background-color: rgba(37, 40, 59, 0.2); /* Translucent background */
+    backdrop-filter: blur(10px); /* Optional: adds a blur effect behind the content */
+}
+
+.logo {
+    margin-left: 30px;
+    height: 50px;
+    margin-right: 20px;
+    padding: 10;
+    z-index: 15;
+}
+
+.title-bar .right-sections {
+    margin-left: auto; /* Pushes the right-sections to the right */
+    display: flex;
+    align-items: center;
+}
+
+
+.menu-icon {
+    margin-right: 30px;
+    width: 65px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 80px; /* Space between the title and the menu icon */
+    cursor: pointer; /* Make it look clickable */
+    padding: 4px;
+}
+
+/* Keyframes for fadeInUp Effect */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(90px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for shadowPulse Effect */
+@keyframes shadowPulse {
+    0%, 100% {
+        text-shadow: 0 0 05px #ffffff;
+    }
+    50% {
+        text-shadow: 0 0 10px #ffffff;
+    }
+}
+
+
+
+.dropdown-content {
+    margin-top: 470px;
+    display: none; /* Hide the dropdown by default */
+    position: absolute;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    width: 350px; /* Adjust width to fit images */
+    height: 405px;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+    z-index: 17;
+    border-radius: 10px;
+    right: 0; /* Align the dropdown to the right */
+    opacity: 90%;
+    border: 2px solid black; /* Add border */
+}
+
+.dropdown-content a {
+    color: rgb(0, 0, 0);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex; /* Use flexbox to align text and image */
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid black; /* Add border to each option */
+    height: 65px;
+
+}
+
+.dropdown-content a img {
+    margin-right: 35px; /* Space between the image and the text */
+    width: 35px; /* Adjust image size */
+    height: 35px; /* Adjust image size */
+
+    
+}
+
+.dropdown-content a:hover {
+    color: rgb(0, 0, 0);
+    background-color: #9a9a9a; /* Highlight option on hover */
+    border-bottom-color: grey; /* Change border color on hover */
+
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+body {
+    font-family: Poppins;
+    margin: 0;
+    background-color: #010101; /* solid background color */
+    color: #ffffff;
+    font-weight:600;
+}
+
+
+.slider {
+    height: 97vh;
+    margin-top: 25px;
+    position: relative;
+    width: 1600px;
+    margin-left: 44px;
+    animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */
+    z-index: 15;
+}
+
+.slider .list .item {
+    
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 2s ease, transform 2s ease;
+    background-color: transparent; 
+}
+
+.slider .list .item img {
+    width: 85%; 
+    height: 85%;
+    object-fit: cover;
+    margin: auto;
+    display: block;
+    border-radius: 30px;
+    border: 1px solid black; /* White border */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7); /* Shadow effect */
+}
+
+.slider .list .item::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    
+    
+}
+
+.slider .list .item .content {
+    color: #ffffff;
+    position: absolute;
+    left: 10%;
+    top: 5%;
+    width: auto;
+    max-width: 42%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.447);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: justify;
+    
+}
+
+.slider .list .item .content p:nth-child(1) {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.slider .list .item .content h2 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.slider .list .item.active {
+    opacity: 1;
+    
+    z-index: 10;
+}
+
+@keyframes showContent {
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3) {
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards;
+}
+
+.slider .list .item.active h2 {
+    animation-delay: 1s;
+}
+
+.slider .list .item.active p:nth-child(3) {
+    animation-duration: 1.3s;
+}
+
+.arrow1 {
+    position: absolute;
+    top: 35%;
+    left: 120px;
+    z-index: 100;
+}
+
+.arrow1 button {
+    background-color: transparent;
+    border: rgb(254, 254, 254);
+    font-size:65px;
+    font-weight: 900;
+    font-family: monospace;
+    width: 90px;
+    height: 90px;
+    border-radius: 15px;
+    
+    color: rgb(255, 255, 255);
+    transition: .5s;
+}
+
+.arrow2 {
+    position: absolute;
+    top: 35%;
+    right: 120px;
+    z-index: 100;
+}
+
+.arrow2 button {
+    background-color: transparent;
+    border: rgb(255, 255, 255);
+    font-size:65px;
+    font-weight: 900;
+    font-family: monospace;
+    width: 90px;
+    height: 90px;
+    border-radius: 15px;
+    
+    color: white;
+    transition: .5s;
+}
+.arrows button:hover {
+    background-color: #eee;
+    color: black;
+    opacity: 45%;
+}
+
+.thumbnail {
+    position: absolute;
+    bottom: 0px;
+    z-index: 11;
+    display: flex;
+    gap: 0.5px; /* Reduced gap between slider images */
+    width: 96%;
+    height: 205px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow: auto;
+    justify-content: right;
+    
+}
+
+.thumbnail::-webkit-scrollbar {
+    width: 0;
+}
+
+.thumbnail .item {
+    width: 100px;
+    height: 120px;
+    filter: brightness(.5);
+    transition: .5s;
+    flex-shrink: 0;
+}
+
+.thumbnail .item img {
+    width: 55%;
+    height: 55%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid white; /* White border */
+}
+
+.thumbnail .item.active {
+    filter: brightness(2);
+}
+
+.thumbnail .item .content {
+    position: absolute;
+    inset: auto 10px 10px 10px;
+}
+
+@media screen and (max-width: 678px) {
+    .thumbnail {
+        justify-content: start;
+    }
+
+    .slider .list .item .content h2 {
+        font-size: 60px;
+    }
+
+    .arrows {
+        top: 10%;
+    }
+}
+
+.title-container{
+    
+        position: absolute; /* Allows precise positioning */
+        top: 110vh; /* Adjust this value to move the container upwards */
+        right: 0; /* Aligns the container to the right */
+        padding: 20px; /* Padding for the container */
+        background-color: transparent;
+    
+        border-radius: 20px; /* Rounded corners */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.0); /* Subtle shadow effect */
+        width: 700px; /* Set desired width */
+        height: 15vh; /* Set desired height */
+        left: 485px;
+        z-index: 10; /* Adjust z-index if necessary */
+        margin-top: auto;
+        margin-left: 30px;
+        background-color: transparent;
+
+}
+
+.title-container h1 {
+    font-size: 57px; /* Large font size */
+    font-weight: 800;
+    color: #ffffff; /* Vibrant color */
+    text-align: center; /* Centered text */
+    margin-bottom: 10px; /* Spacing below the heading */
+    animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */
+    z-index: 25;
+}
+
+
+.games {
+    display: flex;
+    justify-content: space-between; /* Space between the items */
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    margin-top: 190px;
+    
+    padding:30px; /* Add padding to ensure distance from the edges */
+    animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */
+}
+
+.game-item {
+    position: relative; /* Position relative for absolute positioning of details */
+    width: calc(20% - 20px); /* Set a fixed width for the game items */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+    margin-left: 20px; /* Spacing between game items */
+    margin-right: 20px;
+    overflow: hidden; /* Hide overflow to contain hover effect */
+    border-radius: 10px; /* Optional: add some border radius */
+    transition: transform 0.3s; /* Smooth scale effect */
+    border: 1px solid black; /* Add border */
+}
+
+.game-image {
+    width: 100%; /* Full width of the container */
+    height: 50vh; /* Adjust the height */
+    border-radius: 8px; /* Optional: add some border radius */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    transition: filter 0.3s ease; /* Smooth transition for blur effect */
+}
+
+.details {
+    position: absolute;
+    top: 0; /* Position at the top of the image */
+    left: 0; /* Align to the left edge of the image */
+    right: 0; /* Align to the right edge of the image */
+    bottom: 0; /* Align to the bottom of the image */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #ffffff; /* White text color */
+    opacity: 0; /* Initially hidden */
+    display: flex; /* Enable flexbox for alignment */
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    transition: opacity 0.3s ease; /* Fade effect */
+    
+}
+
+.details h3 {
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 0; /* Adjust margin for better positioning */
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.details p {
+    font-size: 12px; /* Adjust font size for the description */
+}
+
+.game-item:hover .game-image {
+    filter: blur(2px); /* Blur the image on hover */
+}
+
+.game-item:hover .details {
+    opacity: 1; /* Show details on hover */
+}
+
+.game-item:hover {
+    transform: scale(1.05); /* Scale up the item slightly on hover */
+}
+
+.games .go-to-button {
+    display: inline-block;
+    font-weight: 500;
+    margin-left: 730px;
+    padding: 30px;
+    margin-top: 50px;
+    background-color: #000000; /* Button background color */
+    color: white; /* Text color */
+    border: 2px solid white;
+ 
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 20px;
+    transition: background-color 0.3s ease; /* Smooth background color change on hover */
+    animation: fadeInUp 2s ease-out, shadowPulse 3s infinite; /* Animation */
+    z-index: 30;
+
+}
+
+.go-to-button:hover {
+    color: black;
+    background-color: #ffffff; /* Darker shade on hover */
+}
+
+
+
+.contact-us{
+    position: relative;
+    margin-top: 65px;
+    margin-left: 40px;
+    height:347px;
+    width: 600px;
+    left: 0px;
+    right: 0px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 35px;
+    margin-bottom: 10px; /* Spacing below the heading */
+    margin-left: 59px;
+    animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */
+    z-index: 17;
+    border-radius: 20px;
+    border: 0.5px solid white;
+    
+}
+.contact-us h3{
+    
+    font-size: 40px; /* Large font size */
+    font-weight: 600;
+    color: #ffffff; /* Vibrant color */
+    text-align: left; /* Centered text */
+    animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */  
+    margin-bottom: 50px;  
+    text-align: center;
+}
+
+
+.contact-us .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-logo {
+    width: 45px;
+    height: 45px;
+    margin-right: 50px;
+    margin-left: 60px;
+}
+
+.contact-item a {
+    font-size: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 200;
+    padding: 10px;
+    
+}
+
+.contact-item a:hover {
+    color: #ea1c1c; /* Optional hover color */
+}
+
+
+
+.community{
+    position: absolute;
+    margin-top: -357px; 
+    height:350px;
+    width: 900px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    margin-left: 720px;
+    margin-bottom: 10px; /* Spacing below the heading */
+    animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */
+    z-index: 17;
+    border: 0.5px solid white;
+    text-align: center;
+
+    border-radius: 20px;
+    
+}
+.community .flex{
+    display: flex;
+    align-items: center;
+}
+
+.community h3{
+    font-size: 40px; /* Large font size */
+    font-weight: 600;
+    color: #ffffff; /* Vibrant color */
+    text-align: left; /* Centered text */
+    animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */  
+    margin-bottom: 50px;  
+    
+}
+
+.community h4{
+    font-size: 25px; /* Large font size */
+    font-weight: 400;
+    color: #ffffff; /* Vibrant color */
+    text-align: left; /* Centered text */
+    animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */  
+    margin-top: 50px;  
+   
+}
+
+.comm-image {
+    width: 90px;
+    height: 90px;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+.community .comm-button {
+    display: inline-block;
+    font-weight: 500;
+    margin-right: 50px;
+    padding: 25px;
+    margin-top: 30px;
+    background-color: #000000; /* Button background color */
+    color: white; /* Text color */
+    border: 2px solid white;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 20px;
+    transition: background-color 0.3s ease; /* Smooth background color change on hover */
+    animation: fadeInUp 2s ease-out, shadowPulse 3s infinite; /* Animation */
+    z-index: 30;
+   
+
+}
+
+.comm-button:hover {
+    color: black;
+    background-color: #ffffff; /* Darker shade on hover */
+}
+
+.doubleplayer{
+    position: absolute;
+    margin-top: 55px;
+    margin-left: 720px;
+    height:350px;
+    width: 900px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    margin-bottom: 10px; /* Spacing below the heading */
+    animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */
+    z-index: 17;
+    text-align: center;
+    border: 0.5px solid white;
+    border-radius: 20px;
+    
+}
+.doubleplayer .flex{
+    display: flex;
+    align-items: center;
+}
+
+.doubleplayer h3{
+    font-size: 40px; /* Large font size */
+    font-weight: 600;
+    color: #ffffff; /* Vibrant color */
+    text-align: left; /* Centered text */
+    animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */  
+    margin-bottom: 50px;  
+    
+}
+
+.doubleplayer h4{
+    font-size: 25px; /* Large font size */
+    font-weight: 400;
+    color: #ffffff; /* Vibrant color */
+    text-align: left; /* Centered text */
+    animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */  
+    margin-top: 50px;  
+   
+}
+
+.db-image {
+    width: 90px;
+    height: 90px;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+.doubleplayer .db-button {
+    display: inline-block;
+    font-weight: 500;
+    margin-right: 50px;
+    padding: 25px;
+    margin-top: 30px;
+    background-color: #000000; /* Button background color */
+    color: white; /* Text color */
+    border: 2px solid white;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 20px;
+    transition: background-color 0.3s ease; /* Smooth background color change on hover */
+    animation: fadeInUp 2s ease-out, shadowPulse 3s infinite; /* Animation */
+    z-index: 30;
+   
+
+}
+
+.db-button:hover {
+    color: black;
+    background-color: #ffffff; /* Darker shade on hover */
+}
+
+
+
+.add-friends{
+    position: relative;
+    margin-top: 120px;
+    margin-left: 40px;
+    height:350px;
+    width: 600px;
+    left: 0px;
+    right: 0px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 35px;
+    margin-bottom: 10px; /* Spacing below the heading */
+    margin-left: 59px;
+    animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */
+    z-index: 17;
+    border-radius: 20px;
+    border: 0.5px solid white;
+    
+}
+.add-friends h3{
+    
+    font-size: 40px; /* Large font size */
+    font-weight: 600;
+    color: #ffffff; /* Vibrant color */
+    text-align: left; /* Centered text */
+    animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */  
+    margin-bottom: 50px;  
+    text-align: center;
+}
+
+
+/* .add-friends .a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-logo {
+    width: 45px;
+    height: 45px;
+    margin-right: 50px;
+    margin-left: 60px;
+}
+
+.contact-item a {
+    font-size: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 200;
+    padding: 10px;
+    
+} */
+
+.blogs-container{
+    
+    position: absolute; /* Allows precise positioning */
+    top: 345vh; /* Adjust this value to move the container upwards */
+    right: 0; /* Aligns the container to the right */
+    padding: 20px; /* Padding for the container */
+    background-color: transparent;
+
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.0); /* Subtle shadow effect */
+    width: 700px; /* Set desired width */
+    height: 15vh; /* Set desired height */
+    left: 440px;
+    z-index: 15; /* Adjust z-index if necessary */
+    margin-top: auto;
+    margin-left: 30px;
+    background-color: transparent;
+
+}
+
+.blogs-container h1 {
+font-size: 57px; /* Large font size */
+font-weight: 800;
+color: #ffffff; /* Vibrant color */
+text-align: center; /* Centered text */
+margin-bottom: 10px; /* Spacing below the heading */
+animation: fadeInUp 1s ease-out, shadowPulse 3s infinite; /* Animation */
+z-index: 25;
+}
